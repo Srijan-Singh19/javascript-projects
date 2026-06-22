@@ -27,14 +27,19 @@ const months = [
     "September", "October", "November", "December"
 ];
 
+const days = [
+    "Sunday", "Monday", "Tuesday",
+    "Wednesday", "Thursday", "Friday", "Saturday"
+]
 function updateDate() {
     const date = new Date();
-
+    
+    const week= days[date.getDay()];
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
 
-    dates.textContent = `${day} ${month} ${year}`;
+    dates.textContent = `${day} ${month} ${year} ${(week)}`;
 }
 
 updateDate();
