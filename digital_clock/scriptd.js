@@ -13,11 +13,11 @@ function updateClock() {
     sec = String(sec).padStart(2, "0");
 
     let period= hour>=12?"PM":"AM";
-
+    let wishes = hour>=6 && hour<12?"(Good Morning)":"(Good Evening)";
     hour=hour%12;
     hour=hour||12;
 
-    clock.textContent = `${hour}:${min}:${sec} ${period}`;
+    clock.textContent = `${hour}:${min}:${sec} ${period}${(wishes)}`;
 
 }
 
